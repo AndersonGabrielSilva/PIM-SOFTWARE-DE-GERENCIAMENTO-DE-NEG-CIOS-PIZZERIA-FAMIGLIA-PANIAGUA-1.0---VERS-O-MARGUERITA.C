@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1570383372 source:/home/andersongabriel/C/Cadastro/PizzariaPIM/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pizzaria.h"
+
+1570376864 /home/andersongabriel/C/Cadastro/PizzariaPIM/pizzaria.h
+
+1570385080 source:/home/andersongabriel/C/Cadastro/PizzariaPIM/pizzaria.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1571961666 source:z:\pizzariapim\pizzaria.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1571888995 source:z:\pizzariapim\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pizzaria.h"
+
+1571888908 z:\pizzariapim\pizzaria.h
+
+1572795707 source:c:\users\ander\documents\pizzariapim\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pizzaria.h"
+
+1572795168 c:\users\ander\documents\pizzariapim\pizzaria.h
+
+1572796036 source:c:\users\ander\documents\pizzariapim\pizzaria.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<windows.h>
+	<string.h>
+
+1574967941 source:c:\pizzariapim\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pizzaria.h"
+
+1574944287 c:\pizzariapim\pizzaria.h
+
+1574952428 source:c:\pizzariapim\pizzaria.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<windows.h>
+	<string.h>
+

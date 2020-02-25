@@ -1,0 +1,163 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define QTDPRODUTOS 150
+
+
+typedef struct {//ingredientes
+        char CsaborC [50];
+        float FqtdIngredientes;
+    } pizza;
+
+ typedef struct {//Sabores
+        char CsaborC [50];
+        float  FprecoC;
+        int  IverificadorC;
+        pizza ingredientes;
+
+    } pizzas;
+    pizzas sabores[QTDPRODUTOS];
+
+
+void loginMenu ()
+{
+            char CnomeLoginL [81]; //strcpy(CnomeLoginL , "secreto");
+            char CnomeIseridoL [81];
+            char CsenhaL [81];
+            char CsenhainseridaL [81];
+            int CmenuL;
+
+    strcpy (CnomeLoginL , "Gerente");
+    strcpy (CsenhaL , "secreto");
+
+       do {
+
+        LinhaAsterisco ();
+        printf ("\n\t\t\t\tTela de Login\n");
+        LinhaAsterisco ();
+
+        printf ("\nLogin : ");
+        scanf ("%80s", &CnomeIseridoL);
+        printf ("\nSenha : ");
+        scanf ("%80s", &CsenhainseridaL);
+
+        if (strcmp (CnomeLoginL, CnomeIseridoL)==0 && strcmp (CsenhaL, CsenhainseridaL)==0)
+        {
+
+          limparTela ();
+
+        }else {
+            printf ("\nSenha Incorreta, tente novamente.\n");
+        }
+            getchar();
+
+    }while (strcmp (CnomeLoginL, CnomeIseridoL)!=0 && strcmp (CsenhaL, CsenhainseridaL)!=0);
+
+    printf ("\n Login efetuado com sucesso\n");
+    getchar();
+    }
+
+
+void LinhaAsterisco ()
+{
+    for (int x = 0; x<80;x++)
+    {
+        printf ("*");
+    }
+}
+
+void cadastroPizza()
+ {
+    int cancelar = 0;
+    int x;
+    char CsaborC [50];
+    float  FprecoC;
+    int op;//Ultilizado para o Switch case
+    int menu;// Ultilizado no do while
+
+
+
+
+    do {
+
+        system ("clear");
+        //getchar();
+        cancelar = 0;
+        printf ("\nInsira o Sabor: ");
+        fgets  (CsaborC,sizeof (CsaborC), stdin);
+        printf ("\nInsira o Valor: ");
+        scanf  ("%f", &FprecoC);
+
+
+        for (x=0;x<QTDPRODUTOS;x++)//Passa os valores para a struct
+        {
+            if (sabores[x].IverificadorC==0){
+                strcpy(sabores[x].CsaborC, CsaborC);
+                sabores[x].FprecoC = FprecoC;
+                sabores[x].IverificadorC=1;
+                cancelar = x;
+
+                break;
+            }
+        }
+
+        printf ("\n0- Cancelar ");
+        printf ("\n1- Corrigir ");
+        printf ("\n2- Adicionar outra");
+        printf ("\n3- Finalizar e voltar ao menu anterior");
+        scanf  ("%d",&menu);
+
+        if (menu==0){//Cancelar
+            sabores[cancelar].IverificadorC = 0;
+                    op = 1;
+        }else if (menu==1){//Corrigir Cadastro
+            sabores[cancelar].IverificadorC = 0;
+                    op = 0;
+        }else if (menu==2){// Adicionar outra Pizza
+             op = 0;
+        }else {//Finalizar e voltar
+            op = 1;
+       }
+
+    getchar();
+    }while (op!=1);
+
+    }
+
+void pesquisarPizza(){
+
+}
+
+void listarPizza(){
+                limparTela ();
+
+       for (int x = 0; x<QTDPRODUTOS;++x){
+        if ( sabores[x].IverificadorC ==1)
+            {
+            printf  ("\n----------------------------------------");
+            printf ("\nSabor : %s\n",sabores[x].CsaborC);
+            printf ("\nPreço : %.2f\n",sabores[x].FprecoC);
+            }
+        }
+
+}
+
+
+void verificador ()
+{
+ for (int x=0;x<QTDPRODUTOS;x++)
+        {
+            if (sabores[x].IverificadorC!=1){
+
+                sabores[x].IverificadorC=0;
+
+                break;
+            }
+        }
+}
+
+void limparTela ()
+{
+              system ("clear");
+
+}

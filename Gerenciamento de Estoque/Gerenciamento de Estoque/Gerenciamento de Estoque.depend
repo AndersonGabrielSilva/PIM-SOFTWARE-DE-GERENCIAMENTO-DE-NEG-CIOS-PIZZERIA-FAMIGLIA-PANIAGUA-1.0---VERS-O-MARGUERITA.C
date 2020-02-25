@@ -1,0 +1,76 @@
+# depslib dependency file v1.0
+1570589186 source:/home/andersongabriel/C/Cadastro/Gerenciamento de Estoque/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcoes.h"
+
+1570385677 /home/andersongabriel/C/Cadastro/Gerenciamento de Estoque/funçoes.h
+
+1570589180 source:/home/andersongabriel/C/Cadastro/Gerenciamento de Estoque/funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570545844 /home/andersongabriel/C/Cadastro/Gerenciamento de Estoque/funcoes.h
+
+1570589180 source:z:\c\cadastro\gerenciamento de estoque\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570848557 source:z:\c\cadastro\gerenciamento de estoque\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcoes.h"
+
+1570545844 z:\c\cadastro\gerenciamento de estoque\funcoes.h
+
+1572793539 source:c:\users\ander\documents\gerenciamento de estoque\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<windows.h>
+	<string.h>
+
+1572785397 source:c:\users\ander\documents\gerenciamento de estoque\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"funcoes.h"
+
+1572785059 c:\users\ander\documents\gerenciamento de estoque\funcoes.h
+
+1571001641 source:c:\users\ander\desktop\gerenciamento de estoque\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+
+1571001708 source:c:\users\ander\desktop\gerenciamento de estoque\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"funcoes.h"
+
+1570980122 c:\users\ander\desktop\gerenciamento de estoque\funcoes.h
+
+1574966696 source:c:\gerenciamento de estoque\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<windows.h>
+	<string.h>
+
+1574966741 source:c:\gerenciamento de estoque\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"funcoes.h"
+
+1574741246 c:\gerenciamento de estoque\funcoes.h
+

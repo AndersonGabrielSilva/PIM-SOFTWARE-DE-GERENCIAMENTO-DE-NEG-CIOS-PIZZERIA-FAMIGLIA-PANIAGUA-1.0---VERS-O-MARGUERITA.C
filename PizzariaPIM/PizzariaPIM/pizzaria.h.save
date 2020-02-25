@@ -1,0 +1,10 @@
+#ifndef PIZZARIA_H_INCLUDED
+#define PIZZARIA_H_INCLUDED
+
+void loginMenu ();
+void verificador ();
+void listarPizza();
+void cadastroPizza();
+
+
+#endif // PIZZARIA_H_INCLUDED

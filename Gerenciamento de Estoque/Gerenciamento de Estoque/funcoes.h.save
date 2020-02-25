@@ -1,0 +1,16 @@
+#ifndef FUNCOES_H_INCLUDED
+#define FUNCOES_H_INCLUDED
+
+void loginMenu ();
+void MenuPizza ();
+void verificador ();
+void listarPizza();
+void cadastroPizza();
+void removerPizza();
+void pesquisarPizza();
+void limparTela ();
+void LinhaAsterisco ();
+void LinhaTraco ();
+void gotoxy(int x, int y);
+void printfCenter(char *texto, int linha);
+#endif // FUNCOES_H_INCLUDED

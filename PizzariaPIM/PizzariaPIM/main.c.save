@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "pizzaria.h"
+#define QTDPRODUTOS 150
+
+
+int main()
+{
+
+        //loginMenu();
+        verificador ();
+        cadastroPizza();
+        listarPizza();
+
+        int op;
+
+        limparTela();
+
+        LinhaAsterisco ();
+        printf ("\n\t\t\t\tMenu Principal\n");
+        LinhaAsterisco ();
+
+        printf  ("\n1- Cadastro de clientes");
+        printf  ("\n2- Pedidos");
+        printf  ("\n3- Promoçoes");
+        printf  ("\n4- Avaliação do cliente");
+        printf  ("\n\nDigite a opção desejada:\t\t\t\t\tSair[S/N]\n");
+        scanf   ("%c",&op);
+
+        //printf ("\n%d",op);
+
+// Função abaixo para poder ultilizar tanto numeros quanto caracteres no switch case
+        if (op == 49){// 49 == 1
+            op = 1;
+                }else if (op ==50){// 50 ==2
+                    op = 2;
+                        }else if (op ==51){ //51 ==3
+                            op = 3;
+                                }else if (op ==52){ //52==4
+                                    op = 4;
+                                        }else if (op == 83|| op == 115){ //83 == S e 115 == s
+                                            op = 5;
+                                                }else if (op == 78 || op == 110){ //78 == N e 110 == n
+                                                    op= 6;
+                                                    }else {
+
+                                                        printf ("\n---------------");
+                                                        printf ("\nOpção Invalida");
+                                                        printf ("\n---------------");
+                                                    }
+
+
+        switch (op)
+        {
+            case 1:{//1 == 49
+            printf ("\n funcionou");
+
+            }break;
+            case 2:{//2==50
+            printf ("\n aeeeeeee");
+
+            }break;
+            case 3:{//3=51
+
+            }break;
+            case 4:{//4==52
+
+            }break;
+            case 5 :{
+            limparTela();
+            exit(0);
+
+            }break;
+            case 6:{
+
+            }break;
+
+        }
+ printf ("\n nada bobo");
+
+    return 0;
+}

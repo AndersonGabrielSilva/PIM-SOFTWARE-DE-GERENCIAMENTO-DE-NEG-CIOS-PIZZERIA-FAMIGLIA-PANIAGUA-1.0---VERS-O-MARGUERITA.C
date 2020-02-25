@@ -1,0 +1,371 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define QTDPRODUTOS 150
+#define QTDINGREDIENTES 80
+const int COLUNA = 80;
+const int LINHA = 20;
+
+
+
+typedef struct {//ingredientes
+        char CIngredienteC [50];
+        float  FqtdC;
+        int   IverificaC;
+    } pizza;
+    pizza ingredientes [QTDPRODUTOS];
+
+ typedef struct {//Sabores
+        char CsaborC [50];
+        float  FprecoC;
+        int  IverificadorC;
+        pizza ingredientes[QTDPRODUTOS];
+
+    } pizzas;
+    pizzas sabores[QTDPRODUTOS];
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+void loginMenu ()
+{
+            limparTela();
+            char CnomeLoginL [81]; //strcpy(CnomeLoginL , "secreto");
+            char CnomeIseridoL [81];
+            char CsenhaL [81];
+            char CsenhainseridaL [81];
+            int CmenuL;
+
+    strcpy (CnomeLoginL , "Gerente");
+    strcpy (CsenhaL , "secreto");
+
+       do {
+
+        LinhaAsterisco ();
+        printf ("\n\t\t\t\tTela de Login\n");
+        LinhaAsterisco ();
+
+        printf ("\nLogin : ");
+        scanf ("%80s", &CnomeIseridoL);
+        printf ("\nSenha : ");
+        scanf ("%80s", &CsenhainseridaL);
+
+        gotoxy(15,8);
+
+        if (strcmp (CnomeLoginL, CnomeIseridoL)==0 && strcmp (CsenhaL, CsenhainseridaL)==0)
+        {
+
+          limparTela ();
+
+        }else {
+            printf ("\nSenha Incorreta, tente novamente.\n");
+        }
+            getchar();
+
+    }while (strcmp (CnomeLoginL, CnomeIseridoL)!=0 && strcmp (CsenhaL, CsenhainseridaL)!=0);
+
+    printf ("\n Login efetuado com sucesso\n");
+    getchar();
+    }
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+void LinhaAsterisco ()
+{
+    for (int x = 0; x<80;x++)
+    {
+        printf ("=");
+    }
+}
+/*
+void bloco cheio (){
+
+}
+*/
+void LinhaTraco ()
+{
+    for (int x = 0; x<80;x++)
+    {
+        printf ("-");
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+void MenuPizza (){
+
+        int menu;
+        int op;
+do {
+        getchar();
+        limparTela();
+        LinhaAsterisco();
+        printf  ("Controle Pizza\n");
+        LinhaAsterisco();
+
+        printf ("\n1- Cadastrar");
+        printf ("\n2- Listar");
+        printf ("\n3- Remover");
+        printf ("\n4- Pesquisar");
+
+        printf ("\n5- Finalizar e voltar ao menu anterior: ");
+        scanf  ("%d",&op);
+
+        switch (op){
+
+            case 1:{
+            getchar();
+            cadastroPizza();
+            op = 0 ;
+
+            }break;
+            case 2:{
+
+            listarPizza();
+
+            }break;
+            case 3:{
+
+            removerPizza();
+
+
+            }break;
+            case 4:{
+
+            pesquisarPizza();
+
+
+            }break;
+
+            case 5:{
+
+
+
+            }break;
+}
+    }while (op!=4);
+
+}
+
+void cadastroPizza()
+{
+    verificador();
+    limparTela();
+    int cancelar = 0;
+    int x;
+    int ingred;//Controla o laço while das opçoes
+    char CsaborC [50],ingrediente [QTDINGREDIENTES] [50];
+    float  FprecoC,qtdigred;
+    int op;//Ultilizado para o Switch case
+    int menu;
+    int sair;// Ultilizado no do while
+    int opcao;
+
+
+
+    do {
+        sair = 0;
+        menu = 0;
+        system ("clear");
+        cancelar = 0;
+        printf ("\nInsira o Sabor: ");
+        fgets  (CsaborC,sizeof (CsaborC), stdin);
+        printf ("\nInsira o Valor: ");
+        scanf  ("%f", &FprecoC);
+
+         for (x=0;x<QTDPRODUTOS;x++)//Passa os valores para a struct
+        {
+            if (sabores[x].IverificadorC==0){
+                strcpy(sabores[x].CsaborC, CsaborC);
+                sabores[x].FprecoC = FprecoC;
+                sabores[x].IverificadorC=1;
+                cancelar = x;
+                break;
+            }
+        }
+/*
+        do{
+
+            getchar();
+
+
+            printf  ("\nIgredientes: ");
+            fgets   (ingrediente[QTDINGREDIENTES],sizeof(ingrediente[QTDINGREDIENTES]),stdin);
+            printf ("\nQuantidade em gramas: ");
+            scanf  ("%f",&qtdigred);
+
+        do {
+        ingred = 0;
+        opcao = 0;
+
+            printf ("\nAdicionar mais [s/n] ");
+            scanf  ("\n%c", &ingred);
+
+                if (ingred == 83 || ingred == 115){
+                    ingred = 1;
+                    opcao = 0;
+                    }else if ( ingred == 78||ingred == 110){
+                        ingred = 0;
+                        opcao = 0;
+                    }else {
+
+                    LinhaTraco();
+                    printf("\nOpção Inválida\n");
+                    LinhaTraco();
+                            opcao = 1;
+                        }
+
+        }while (opcao!=0);
+
+       //  QTDINGREDIENTES++;// Controle da Matriz
+
+        }while (ingred != 0);
+
+
+*/
+
+        getchar();
+        printf ("\n1- Cancelar ");
+        printf ("\n2- Corrigir ");
+        printf ("\n3- Adicionar outra");
+        printf ("\n4- Finalizar e voltar ao menu anterior:\n");
+        __fpurge(stdin);
+        scanf  ("%d",&menu);
+
+    switch (menu){
+
+            case 1:{
+
+            sabores[cancelar].IverificadorC = 0;
+                   sair = 0;
+
+            }break;
+            case 2:{
+
+            sabores[cancelar].IverificadorC = 0;
+                    sair = 0;
+
+            }break;
+            case 3:{
+
+            sair = 1;
+            getchar();
+
+            }break;
+
+            case 4:{
+
+            sair = 0;
+
+            }break;
+
+    }
+    }while (sair==1);
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+void removerPizza(){
+loginMenu();
+limparTela();
+int ativo;
+listarPizza();
+printf("\nDigite o nome da pizza que deseja remover: ");
+scanf ("%d",&ativo);
+--ativo;
+sabores [ativo].IverificadorC = 0;
+
+LinhaTraco();
+printf   ("\nProduto Removido\n");
+LinhaTraco();
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+void pesquisarPizza(){
+    getchar();
+    char CpesquisarP [50];
+    printf ("\nDigite o nome da Pizza: ");
+    fgets(CpesquisarP,sizeof (CpesquisarP),stdin);
+
+    for (int x = 0; x<QTDPRODUTOS;++x){
+
+       if (sabores[x].IverificadorC ==1){
+
+        if ( strcmp (sabores[x].CsaborC, CpesquisarP) == 0)
+            {
+            LinhaTraco();
+            printf  ("\nCodigo do Produto: %d",x+1);
+            printf ("\nSabor : %s\n",sabores[x].CsaborC);
+            printf ("\nPreço : %.2f\n",sabores[x].FprecoC);
+            LinhaTraco();
+            }else {
+            printf ("\nProduto não encontrado");
+            }
+        }
+        }
+    getchar();
+
+
+
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+void listarPizza(){
+
+
+
+       for (int x = 0; x<QTDPRODUTOS;++x){
+        if ( sabores[x].IverificadorC ==1)
+            {
+            LinhaTraco();
+            printf  ("\nNumero do Produto: %d",x+1);
+            printf ("\nSabor : %s\n",sabores[x].CsaborC);
+            printf ("\nPreço : %.2f\n",sabores[x].FprecoC);
+
+
+            }
+            }
+
+            LinhaTraco();
+            getchar();
+
+            }
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+void verificador ()
+{
+ for (int x=0;x<QTDPRODUTOS;x++)
+        {
+            if (sabores[x].IverificadorC!=1){
+
+                sabores[x].IverificadorC=0;
+
+
+
+            }
+            }
+            }
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+void limparTela ()
+{
+              system ("clear");
+
+}
+
+void gotoxy(int x, int y){//x é a COLUNA e o Y a LINHA
+
+	printf("%c[%d;%df",0x1B,y,x);
+}
+
+void printfCenter(char *texto, int linha){
+int coluna = (COLUNA / 2) - strlen(texto);
+gotoxy(coluna, linha);
+printf("%s", texto);
+}

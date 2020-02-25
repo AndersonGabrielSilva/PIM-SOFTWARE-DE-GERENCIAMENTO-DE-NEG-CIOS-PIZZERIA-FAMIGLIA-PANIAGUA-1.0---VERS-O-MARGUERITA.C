@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "funcoes.h"
+
+int main()
+{
+
+    loginMenu ();
+    verificador();
+    int op = 0;
+    int topo;
+
+    do {
+    limparTela();
+    topo = 0;
+
+
+    //LinhaAsterisco();
+    printf("\t ===============|  GERENCIAR ESTOQUE  |===============  \n");
+    //LinhaAsterisco();
+    //printfCenter("1 -  PIZZAS",5);
+    printf  ("\n1 -  PIZZAS");
+    printf  ("\n\n2 -  BEBIDAS");
+    printf  ("\n\n3 -  MATERIAS PRIMAS / INGREDIENTES");
+    printf  ("\n\n4 -  RELATORIOS");
+    printf  ("\n\n\nDIGITE A OPÇÃO DESEJADA:\t\t\t\t\tSAIR [S/N]\n\n");
+    LinhaAsterisco();
+
+    scanf   ("%c",&op);
+
+    // Função abaixo para poder ultilizar tanto numeros quanto caracteres no switch case
+        if (op == 49){// 49 == 1
+            op = 1;
+                }else if (op ==50){// 50 ==2
+                    op = 2;
+                        }else if (op ==51){ //51 ==3
+                            op = 3;
+                                }else if (op ==52){ //52==4
+                                    op = 4;
+                                        }else if (op == 83|| op == 115){ //83 == S e 115 == s
+                                            op = 5;
+                                                }else if (op == 78 || op == 110){ //78 == N e 110 == n
+                                                    op= 6;
+                                                    }else {
+
+                                                        LinhaTraco();
+                                                        printf ("Opção Invalida\n");
+                                                        LinhaTraco();
+                                                        printf ("\n");
+                                                        op = 7;
+                                                        topo = 1; //volta para o topo e exibe o menu de novo
+
+                                                    }
+
+
+        switch (op)
+        {
+            case 1:{//1 == 49
+            MenuPizza();
+            topo = 1;
+            printf ("\nChegou");
+            }break;
+            case 2:{//2==50
+            printf ("\n aeeeeeee");
+
+            }break;
+            case 3:{//3=51
+
+            }break;
+            case 4:{//4==52
+
+            }break;
+            case 5 :{
+            limparTela();
+            exit(0);
+
+            }break;
+            case 6:{
+
+            }break;
+
+        }
+
+ }while (topo!=0);
+    removerPizza();
+    return 0;
+}
